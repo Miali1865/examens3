@@ -100,6 +100,22 @@ class User_model extends CI_model{
         }
     }
 
+    
+    public function getDetailObjet( $idObjet ){                     //photo d'une objet
+        $sql = "select * 
+        from  objet
+        where idObjet = %g";
+        $sql = sprintf( $sql , $idObjet );
+        // echo $sql;
+        $query = $this->db->query( $sql );
+        $picture = array();
+        foreach( $query->result_array() as $row ){
+            array_push($picture , $row );
+        }
+        return $picture;
+    }
+
+
 
     public function getPictureOfObject( $idObjet ){                     //photo d'une objet
         $sql = "select * 
@@ -165,11 +181,53 @@ class User_model extends CI_model{
         return $object;
     }
 
-    public function insertObject( $titre , $idutilisateur , $prixestimatif ) {
+
+/// insertion objet
+
+    public function getLastId(){
+        $sql = " select getlast_id() as last ";
+        echo $sql;
+        $sql = $this->db->query($sql);
+        $row = $sql->row_array();
+        return $row['last'];
+    }
+
+    public function getAllCheck( $get , $listeCategorie ){
+        $name = "";
+        $array = array();
+        foreach( $listeCategorie as $list ){
+            $name = $list['idcategorie']."-categ";
+            if( !empty( $get[$name] ) ){
+                array_push( $array , $list['idcategorie'] );
+            }
+        }
+        if( count($array) == 0 )    throw new Exception(" auncune catégorie selectionné  ");
+        return $array;
+    }
+
+    public function  insertCategorie( $user , $idcategorie ){
+        $sql = " insert into objetcategorie values(  %g  , %g )";
+        $sql = sprintf( $sql , $idcategorie , $user );
+        echo $sql;
+        $sql = $this->db->query($sql);
+    }
+
+
+
+    public function insertObject( $titre , $idutilisateur , $prixestimatif , $listeCategorie , $get ) {
         $sql = " insert into objet( idObjet , titre   , idutilisateur , prixEstimatif ) values ( null , %s , %g , %g)";
         $sql = sprintf( $sql , $this->db->escape($titre) , $idutilisateur , $prixestimatif) ; 
         echo $sql;
+        $idcategorie = $this->getLastId();
         $this->db->query($sql);
+        try{
+            $list = $this->getAllCheck( $get , $listeCategorie );
+            foreach( $list as $l ){
+                $this->insertCategorie( $idcategorie , $l );
+            }
+        }catch( Exception $e ){
+            throw $e;
+        }
     }
  
 
@@ -223,7 +281,7 @@ class User_model extends CI_model{
         $this->db->query($sql);
     }
 
-    public function insertProposition ( $offrant , $propose , $objetOffrant , $objetpropose , $estvalide ) {
+    public function insertProposition ( $offrant , $propose , $objetOffrant , $objetpropose , $estvalide ){
         $sql = " insert into proposition values ( null , %g , %g , %g , %g , %g)";
         $sql = sprintf( $sql , $offrant , $propose , $objetOffrant , $objetpropose , $estvalide ) ; 
         echo $sql;

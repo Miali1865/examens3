@@ -48,84 +48,6 @@
 
     <!-- End of Skills sections -->
 
-    <!-- Portfolio section -->
-    <section id="portfolio" class="section">
-        <div class="container text-center">
-            <h6 class="subtitle">Portfolio</h6>
-            <h6 class="section-title mb-4">Check My Wonderful Works</h6>
-            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In alias dignissimos. <br> rerum commodi corrupti, temporibus non quam.</p>
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="<?php echo base_url();?>assets/imgs/folio-1.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="<?php echo base_url();?>assets/imgs/folio-2.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
-                </div>
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="<?php echo base_url();?>assets/imgs/folio-3.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="<?php echo base_url();?>assets/imgs/folio-4.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
-                </div>
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="<?php echo base_url();?>assets/imgs/folio-5.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="<?php echo base_url();?>assets/imgs/folio-6.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
-                </div>
-            </div>
-
-        </div>
-    </section>
     <!-- End of portfolio section -->
 
 
@@ -141,7 +63,7 @@
                             <div class="col-md-4">
                                 <div class="card border mb-4">
                                         <?php if( count($listObjet[$i]['photo']) == 0 ){ ?>
-                                            <img style="width: 200px;height: 300px;object-fit:cover;" src="<?php echo base_url();?>assets/imgs/blog-1.jpg" alt="" class="card-img-top w-100">
+                                            <img style="width: 200px;height: 300px;object-fit:cover;" src="<?php echo base_url();?>assets/imgs/image.png" alt="" class="card-img-top w-100">
                                         <?php } else{
                                             ?>
                                             <img style="width: 200px;height: 300px;object-fit:cover;" src="<?php echo base_url();?>assets/imgs/<?php echo $listObjet[$i]['photo'][count($listObjet[$i]['photo']) - 1]['nom']; ?>" alt="" class="card-img-top w-100">
@@ -166,6 +88,11 @@
                                         <?php
                                         }
                                         ?>
+                                        <p><a href="<?php echo base_url();?>home/redirectDetailPhoto?idobjet=<?php echo $listObjet[$i]['idobjet']?>">Voir détail photo</a></p>
+                                        <p>
+                                            <a href="<?php echo base_url();?>taux/listEchange?idobjet=<?php echo $listObjet[$i]['idobjet']?>&&taux=10">-/+10%</a>
+                                            <a href="<?php echo base_url();?>taux/listEchange?idobjet=<?php echo $listObjet[$i]['idobjet']?>&&taux=20">-/+20%</a>
+                                        </p>
                                         <div class="form-group">
                                             <?php echo form_open_multipart('home/do_upload');?>
                                             <input type="file" name="userfile" size="1000000" />

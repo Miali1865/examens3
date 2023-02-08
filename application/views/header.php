@@ -46,6 +46,9 @@
                         <a class="nav-link" href="<?php echo base_url();  ?>home/myObjectInteresse">Proposition Echange</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url();  ?>multi/list">Multi Échange</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#blog">Liste de mes Objets</a>
                     </li>
                     <li class="nav-item">

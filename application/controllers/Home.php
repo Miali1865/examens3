@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
     require_once('SessionManager.php');
-    class Home extends SessionManager {
+    class Home extends SessionManager{
         protected $data = array();
 
         public function __construct() {
@@ -24,8 +24,6 @@
                 $this->data = $_SESSION['data'];
                 $this->session->unset_userdata('data');
             }
-            $this->data['title'] = 'accueil';
-
             $this->load->view('Template' , $this->data );
         }
 
@@ -40,7 +38,7 @@
             $this->data['title'] = 'liste categorie - Examen';
             $this->session->set_userdata('data',$this->data);
             // var_dump( $this->data  );
-            redirect('home');
+            redirect('home/listeObjet');
         }
 
         public function listeObjet(){
@@ -90,7 +88,7 @@
                 $titre = $this->input->get('titre');
                 $prixestimatif = $this->input->get('prix');
                 $id = $_SESSION['user']['idutilisateur'] ;
-                $this->data['user'] = $this->user->insertObject( $titre , $id , $prixestimatif);
+                $this->data['user'] = $this->user->insertObject( $titre , $id , $prixestimatif , $this->data['admin'] ,$_GET);
                 redirect('home');
             }catch( Exception $e ){
                 $this->data['erreur'] = $e->getMessage();
@@ -192,6 +190,21 @@
             }
 
         }
+
+        public function redirectDetailPhoto() {
+            $this->data['title'] = 'Liste détail photo';
+            $this->data['page'] = 'listeDetailPhoto.php';
+            $this->detailPhoto();
+        }
+
+        public function detailPhoto() {
+            $idobjet = $this->input->get('idobjet');
+            $this->data['detailphotoobjet'] = $this->user->getPictureOfObject( $idobjet );
+            $this->data['detailobjet'] = $this->user->getDetailObjet( $idobjet );
+            $this->data['title'] = 'liste détail photo - sakila';
+            $this->session->set_userdata('data',$this->data);
+            redirect('home');
+        } 
 
     }
 ?>

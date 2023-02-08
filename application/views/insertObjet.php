@@ -13,6 +13,14 @@
                         <div class="form-group">
                             Prix &eacute;stimatif : <input type="number" class="form-control" id="exampleInputPassword1" name="prix">
                         </div>
+                        <div class="form-group">
+                        Catégorie :
+                            <?php foreach($admin as $ad) {?>
+                                    <label for=""><?php echo $ad['nom'];?></label>
+                                    <input type="checkbox" name="<?php echo $ad['idcategorie'];?>-categ" id="">    
+                            <?php } ?>
+                        </div>
+
                         <button type="submit" class="btn btn-primary btn-block rounded w-lg">Valider</button>
                     </form>
                 </div>                  

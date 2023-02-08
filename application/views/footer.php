@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-sm-6">
-                    <p>Ralph ETU1906 - Mialivola ETU1865- Divan <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com" target="_blank">DevCRUD</a></p>
+                    <p>RAZAFINJAKA Ralph  ETU1906 - RANDRIANAIVO Mialivola ETU1865- Divan <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com" target="_blank">DevCRUD</a></p>
                 </div>
                 <div class="col-sm-6">
                     <div class="socials">
