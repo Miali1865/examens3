@@ -4,7 +4,7 @@
             <h6 class="section-title mb-4">Liste propositions &eacute;changes objets</h6>
 
             <div class="row text-left">
-                <?php foreach($objet as $obj) {?>
+                <?php foreach($objet as $obj) { ?>
                     <div class="col-md-4">
                         <div class="card border mb-4">
                             <?php if(isset($obj['image'])) { ?>

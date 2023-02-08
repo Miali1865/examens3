@@ -191,6 +191,21 @@ class User_model extends CI_model{
     }
 
 
+    public function getDetailObjet( $idObjet ){                     //photo d'une objet
+        $sql = "select * 
+        from  objet
+        where idObjet = %g";
+        $sql = sprintf( $sql , $idObjet );
+        // echo $sql;
+        $query = $this->db->query( $sql );
+        $picture = array();
+        foreach( $query->result_array() as $row ){
+            array_push($picture , $row );
+        }
+        return $picture;
+    }
+
+
     public function listeEchange( $id ){
         $sql = "select distinct ob.idObjet as objetvolu,ut.nom as propose,ob.titre as objetpropose
         from proposition as p 

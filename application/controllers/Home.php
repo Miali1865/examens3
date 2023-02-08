@@ -191,5 +191,20 @@
 
         }
 
+
+        public function redirectDetailPhoto() {
+            $this->data['title'] = 'Liste détail photo';
+            $this->data['page'] = 'listeDetailPhoto.php';
+            $this->detailPhoto();
+        }
+
+        public function detailPhoto() {
+            $idobjet = $this->input->get('idobjet');
+            $this->data['detailphotoobjet'] = $this->user->getPictureOfObject( $idobjet );
+            $this->data['detailobjet'] = $this->user->getDetailObjet( $idobjet );
+            $this->data['title'] = 'liste détail photo - sakila';
+            $this->session->set_userdata('data',$this->data);
+            redirect('home');
+        } 
     }
 ?>

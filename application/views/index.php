@@ -166,6 +166,7 @@
                                         <?php
                                         }
                                         ?>
+                                        <p><a href="<?php echo base_url();?>home/redirectDetailPhoto?idobjet=<?php echo $listObjet[$i]['idobjet']?>">Voir détail photo</a></p>
                                         <div class="form-group">
                                             <?php echo form_open_multipart('home/do_upload');?>
                                             <input type="file" name="userfile" size="1000000" />
