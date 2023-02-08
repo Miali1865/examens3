@@ -19,7 +19,13 @@
 <body>
    <!-- main content -->
    <div class="container">
-      <h3>Connexion</h3>
+   <?php if( $title == 'Login' ){ ?> 
+         <h3>Connexion</h3>
+   <?php } else {
+      ?>
+         <h3>Inscription</h3>
+      <?php
+   } ?>
       <hr>
       <div class="row mt-5">
          <form class="col-md-6" action="<?php echo $action; ?>" method="post">

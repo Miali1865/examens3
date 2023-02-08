@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-
-    class Home extends CI_Controller {
+    require_once('SessionManager.php');
+    class Home extends SessionManager {
         protected $data = array();
 
         public function __construct() {
@@ -14,9 +14,7 @@
             $this->data['page'] = 'index';
             $this->data['error'] = '';
             $this->data['admin'] = $this->admin->getAllCategorie();
-            $id = 1;
-            if( isset( $_SESSION['user']['idutilisateur'] ) )
-                $id = $_SESSION['user']['idutilisateur'];
+            $id = $_SESSION['user']['idutilisateur'];
             $this->data['listObjet'] = $this->user->getListObject($id);           //récuperation des objets de l'utilisateur
         }
 

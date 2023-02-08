@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-
-    class Search extends CI_Controller {
+    require_once('SessionManager.php');
+    class Search extends SessionManager {
         protected $data = array();
 
         public function __construct() {

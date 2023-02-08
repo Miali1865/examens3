@@ -1,8 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-
-    class Historique extends CI_Controller {
-
+    require_once('SessionManager.php');
+    class Historique extends SessionManager{
         protected $data = array();
 
         public function __construct() {

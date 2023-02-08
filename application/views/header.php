@@ -40,7 +40,7 @@
                         <a class="nav-link" href="<?php echo base_url();  ?>home/pageinsertobject">Insertion objet</a>
                     </li>                   
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" href="<?php echo base_url(); ?>inscription">Inscription</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url();  ?>home/listcateg">Liste des Objets</a>
