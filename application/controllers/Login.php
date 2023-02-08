@@ -18,6 +18,11 @@
             $this->load->view('login' , $this->data);
         }
 
+        public function logout(){
+            $this->session->sess_destroy();
+            redirect("login");
+        }
+
         public function connect(){
             $nom = $this->input->post('nom');
             $mdp = $this->input->post('mdp');
