@@ -30,7 +30,7 @@
                         <?php foreach($searchobjet as $objet) { ?>
                             <div class="col-md-4">
                                 <div class="card border mb-4">
-                                    <img src="<?php echo base_url();?>assets/imgs/blog-1.jpg" alt="" class="card-img-top w-100">
+                                    <img src="<?php echo base_url();?>assets/imgs/image.png" alt="" class="card-img-top w-100">
                                     <div class="card-body">
                                         <h5 class="card-title">Propri&eacute;taire : <?php echo $objet['nom'];?></h5>
                                         <h5 class="card-title">Nom objet : <?php echo $objet['titre'];?></h5>

@@ -141,7 +141,7 @@
                             <div class="col-md-4">
                                 <div class="card border mb-4">
                                         <?php if( count($listObjet[$i]['photo']) == 0 ){ ?>
-                                            <img style="width: 200px;height: 300px;object-fit:cover;" src="<?php echo base_url();?>assets/imgs/blog-1.jpg" alt="" class="card-img-top w-100">
+                                            <img style="width: 200px;height: 300px;object-fit:cover;" src="<?php echo base_url();?>assets/imgs/image.png" alt="" class="card-img-top w-100">
                                         <?php } else{
                                             ?>
                                             <img style="width: 200px;height: 300px;object-fit:cover;" src="<?php echo base_url();?>assets/imgs/<?php echo $listObjet[$i]['photo'][count($listObjet[$i]['photo']) - 1]['nom']; ?>" alt="" class="card-img-top w-100">

@@ -12,13 +12,6 @@
                     <div class="col-sm-4">
                             <div class="img-wrapper">
                                 <img src="<?php echo base_url();?>assets/imgs/<?php echo $photo['nom'];?>" alt="">
-                                <div class="overlay">
-                                    <div class="overlay-infos">
-                                        <h5>Project Title</h5>
-                                        <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                        <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                                    </div>  
-                                </div>
                             </div>                
                     </div>
                 <?php  } ?>
