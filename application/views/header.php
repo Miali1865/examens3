@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with Steller landing page.">
     <meta name="author" content="Devcrud">
-    <title>Steller Landing page | Free Bootstrap 4.1 landing page</title>
+    <title><?php echo $title; ?></title>
     <!-- font icons -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Steller main styles -->
@@ -40,9 +40,6 @@
                         <a class="nav-link" href="<?php echo base_url();  ?>home/pageinsertobject">Insertion objet</a>
                     </li>                   
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url(); ?>inscription">Inscription</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url();  ?>home/listcateg">Liste des Objets</a>
                     </li>
                     <li class="nav-item">
@@ -50,6 +47,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#blog">Liste de mes Objets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url();  ?>login/logout">Déconnexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url(); ?>inscription">Inscription</a>
                     </li>
                     <li class="nav-item">
                 </ul>

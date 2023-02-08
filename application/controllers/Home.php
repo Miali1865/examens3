@@ -37,8 +37,9 @@
 
         public function categorielist() {
             $this->data['admin'] = $this->admin->getAllCategorie();
-            $this->data['title'] = 'liste categorie - sakila';
+            $this->data['title'] = 'liste categorie - Examen';
             $this->session->set_userdata('data',$this->data);
+            // var_dump( $this->data  );
             redirect('home');
         }
 
@@ -47,6 +48,7 @@
                 $this->data = $_SESSION['data'];
                 $this->session->unset_userdata('data');
             }
+            $this->data['title'] = 'liste Objet - Examen';
             $this->data['page'] = 'listeObjet';
             $this->load->view('Template' , $this->data);
         }
